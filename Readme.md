@@ -1,3 +1,8 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [Grid.cs](./CS/Q242361/Grid.cs) (VB: [Grid.vb](./VB/Q242361/Grid.vb))
+<!-- default file list end -->
 # How to implement your own serializable property for the GridColumn
 
 
