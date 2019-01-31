@@ -23,21 +23,15 @@ namespace Q242361 {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
-            this.components = new System.ComponentModel.Container();
             this.myGridControl1 = new DXSample.MyGridControl();
-            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nwindDataSet = new Q242361.nwindDataSet();
             this.myGridView1 = new DXSample.MyGridView();
             this.colCategoryID = new DXSample.MyGridColumn();
             this.colCategoryName = new DXSample.MyGridColumn();
             this.colDescription = new DXSample.MyGridColumn();
-            this.categoriesTableAdapter = new Q242361.nwindDataSetTableAdapters.CategoriesTableAdapter();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.myGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
@@ -45,7 +39,6 @@ namespace Q242361 {
             // 
             // myGridControl1
             // 
-            this.myGridControl1.DataSource = this.categoriesBindingSource;
             this.myGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.myGridControl1.Location = new System.Drawing.Point(0, 0);
             this.myGridControl1.MainView = this.myGridView1;
@@ -54,16 +47,6 @@ namespace Q242361 {
             this.myGridControl1.TabIndex = 0;
             this.myGridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.myGridView1});
-            // 
-            // categoriesBindingSource
-            // 
-            this.categoriesBindingSource.DataMember = "Categories";
-            this.categoriesBindingSource.DataSource = this.nwindDataSet;
-            // 
-            // nwindDataSet
-            // 
-            this.nwindDataSet.DataSetName = "nwindDataSet";
-            this.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // myGridView1
             // 
@@ -77,7 +60,7 @@ namespace Q242361 {
             // colCategoryID
             // 
             this.colCategoryID.Caption = "ID";
-            this.colCategoryID.FieldName = "CategoryID";
+            this.colCategoryID.FieldName = "ID";
             this.colCategoryID.Name = "colCategoryID";
             this.colCategoryID.OldVisibleIndex = 0;
             this.colCategoryID.Visible = true;
@@ -86,7 +69,7 @@ namespace Q242361 {
             // colCategoryName
             // 
             this.colCategoryName.Caption = "Name";
-            this.colCategoryName.FieldName = "CategoryName";
+            this.colCategoryName.FieldName = "Name";
             this.colCategoryName.Name = "colCategoryName";
             this.colCategoryName.OldVisibleIndex = 1;
             this.colCategoryName.Visible = true;
@@ -100,10 +83,6 @@ namespace Q242361 {
             this.colDescription.OldVisibleIndex = 2;
             this.colDescription.Visible = true;
             this.colDescription.VisibleIndex = 2;
-            // 
-            // categoriesTableAdapter
-            // 
-            this.categoriesTableAdapter.ClearBeforeFill = true;
             // 
             // panelControl1
             // 
@@ -144,8 +123,6 @@ namespace Q242361 {
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.myGridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nwindDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.myGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
@@ -156,9 +133,6 @@ namespace Q242361 {
         #endregion
 
         private DXSample.MyGridControl myGridControl1;
-        private nwindDataSet nwindDataSet;
-        private System.Windows.Forms.BindingSource categoriesBindingSource;
-        private Q242361.nwindDataSetTableAdapters.CategoriesTableAdapter categoriesTableAdapter;
         private DXSample.MyGridView myGridView1;
         private DXSample.MyGridColumn colCategoryID;
         private DXSample.MyGridColumn colCategoryName;

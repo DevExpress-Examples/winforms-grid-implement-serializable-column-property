@@ -25,21 +25,15 @@ Namespace Q242361
 		''' the contents of this method with the code editor.
 		''' </summary>
 		Private Sub InitializeComponent()
-			Me.components = New System.ComponentModel.Container()
 			Me.myGridControl1 = New DXSample.MyGridControl()
-			Me.categoriesBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-			Me.nwindDataSet = New Q242361.nwindDataSet()
 			Me.myGridView1 = New DXSample.MyGridView()
 			Me.colCategoryID = New DXSample.MyGridColumn()
 			Me.colCategoryName = New DXSample.MyGridColumn()
 			Me.colDescription = New DXSample.MyGridColumn()
-			Me.categoriesTableAdapter = New Q242361.nwindDataSetTableAdapters.CategoriesTableAdapter()
 			Me.panelControl1 = New DevExpress.XtraEditors.PanelControl()
 			Me.simpleButton2 = New DevExpress.XtraEditors.SimpleButton()
 			Me.simpleButton1 = New DevExpress.XtraEditors.SimpleButton()
 			CType(Me.myGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.categoriesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.myGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
 			CType(Me.panelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
 			Me.panelControl1.SuspendLayout()
@@ -47,7 +41,6 @@ Namespace Q242361
 			' 
 			' myGridControl1
 			' 
-			Me.myGridControl1.DataSource = Me.categoriesBindingSource
 			Me.myGridControl1.Dock = System.Windows.Forms.DockStyle.Fill
 			Me.myGridControl1.Location = New System.Drawing.Point(0, 0)
 			Me.myGridControl1.MainView = Me.myGridView1
@@ -55,16 +48,6 @@ Namespace Q242361
 			Me.myGridControl1.Size = New System.Drawing.Size(401, 234)
 			Me.myGridControl1.TabIndex = 0
 			Me.myGridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() { Me.myGridView1})
-			' 
-			' categoriesBindingSource
-			' 
-			Me.categoriesBindingSource.DataMember = "Categories"
-			Me.categoriesBindingSource.DataSource = Me.nwindDataSet
-			' 
-			' nwindDataSet
-			' 
-			Me.nwindDataSet.DataSetName = "nwindDataSet"
-			Me.nwindDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
 			' 
 			' myGridView1
 			' 
@@ -75,7 +58,7 @@ Namespace Q242361
 			' colCategoryID
 			' 
 			Me.colCategoryID.Caption = "ID"
-			Me.colCategoryID.FieldName = "CategoryID"
+			Me.colCategoryID.FieldName = "ID"
 			Me.colCategoryID.Name = "colCategoryID"
 			Me.colCategoryID.OldVisibleIndex = 0
 			Me.colCategoryID.Visible = True
@@ -84,7 +67,7 @@ Namespace Q242361
 			' colCategoryName
 			' 
 			Me.colCategoryName.Caption = "Name"
-			Me.colCategoryName.FieldName = "CategoryName"
+			Me.colCategoryName.FieldName = "Name"
 			Me.colCategoryName.Name = "colCategoryName"
 			Me.colCategoryName.OldVisibleIndex = 1
 			Me.colCategoryName.Visible = True
@@ -98,10 +81,6 @@ Namespace Q242361
 			Me.colDescription.OldVisibleIndex = 2
 			Me.colDescription.Visible = True
 			Me.colDescription.VisibleIndex = 2
-			' 
-			' categoriesTableAdapter
-			' 
-			Me.categoriesTableAdapter.ClearBeforeFill = True
 			' 
 			' panelControl1
 			' 
@@ -142,8 +121,6 @@ Namespace Q242361
 			Me.Text = "Form1"
 '			Me.Load += New System.EventHandler(Me.Form1_Load);
 			CType(Me.myGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.categoriesBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-			CType(Me.nwindDataSet, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.myGridView1, System.ComponentModel.ISupportInitialize).EndInit()
 			CType(Me.panelControl1, System.ComponentModel.ISupportInitialize).EndInit()
 			Me.panelControl1.ResumeLayout(False)
@@ -154,9 +131,6 @@ Namespace Q242361
 		#End Region
 
 		Private myGridControl1 As DXSample.MyGridControl
-		Private nwindDataSet As nwindDataSet
-		Private categoriesBindingSource As System.Windows.Forms.BindingSource
-		Private categoriesTableAdapter As Q242361.nwindDataSetTableAdapters.CategoriesTableAdapter
 		Private myGridView1 As DXSample.MyGridView
 		Private colCategoryID As DXSample.MyGridColumn
 		Private colCategoryName As DXSample.MyGridColumn

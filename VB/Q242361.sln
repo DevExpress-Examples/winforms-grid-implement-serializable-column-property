@@ -1,23 +1,30 @@
-Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Q242361", "Q242361\Q242361.vbproj", "{94015511-6D9C-4FAE-B5DB-0D18DF4077F1}"
-	ProjectSection(WebsiteProperties) = preProject
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.Debug = "False"
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{94015511-6D9C-4FAE-B5DB-0D18DF4077F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{94015511-6D9C-4FAE-B5DB-0D18DF4077F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94015511-6D9C-4FAE-B5DB-0D18DF4077F1}.Debug|x86.ActiveCfg = Debug|x86
+		{94015511-6D9C-4FAE-B5DB-0D18DF4077F1}.Debug|x86.Build.0 = Debug|x86
 		{94015511-6D9C-4FAE-B5DB-0D18DF4077F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{94015511-6D9C-4FAE-B5DB-0D18DF4077F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94015511-6D9C-4FAE-B5DB-0D18DF4077F1}.Release|x86.ActiveCfg = Release|x86
+		{94015511-6D9C-4FAE-B5DB-0D18DF4077F1}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F83790C-E6EE-47CB-A041-FD6A6650A431}
 	EndGlobalSection
 EndGlobal
