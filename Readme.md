@@ -3,17 +3,33 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E1951)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
+
+# WinForms Data Grid - Implement a serializable property for the grid column
+
+> **Important**
+>
+> This example uses internal APIs that may change in newer versions.
+
+The [VisibleIndex](https://docs.devexpress.com/WindowsForms/DevExpress.XtraGrid.Columns.GridColumn.VisibleIndex) property returns **-1** if a column is hidden. This example demonstrates how to implement a serializable property that stores the visible index of a column before the column is hidden. This allows you to save and restore the position of hidden columns when saving/loading the grid layout.
+
+### Implementation Details
+
+* Create a `GridColumn` descendant (`MyGridColumn`).
+* Implement a new property and apply the `XtraSerializableAttribute` attribute:
+  
+  ```csharp
+  private int oldVisibleIndex = -1;
+  [XtraSerializableProperty, XtraSerializablePropertyId(LayoutIdLayout)]
+  public int OldVisibleIndex {
+      get { return oldVisibleIndex; }
+      set {
+          if (value == -1) return;
+          oldVisibleIndex = value; 
+      }
+  }
+  ```
+
+
+## Files to Review
 
 * [Grid.cs](./CS/Q242361/Grid.cs) (VB: [Grid.vb](./VB/Q242361/Grid.vb))
-<!-- default file list end -->
-# How to implement your own serializable property for the GridColumn
-
-
-<p>When the GridColumn becomes invisible, it's VisibleIndex property returns -1. This example demonstrates how to implement a property that stores an old visible index, and save its value when one of the GridView.SaveLayoutTo.. methods is called. So, after the layout has been restored, setting the GridColumn.Visible property to true automatically moves this column to the position, where this column was before being hidden.<br />
-To accomplish this task, create a GridColumn descendant, and add the necessary property. To notify the XtraSerializer that this property should be serialized, apply the XtraSerializableAttribute attribute to this column.</p><p>Please note, that this example uses an internal functionality, which can be changed in the future. We'll update the example, if this functionality will be changed.</p>
-
-<br/>
-
-
