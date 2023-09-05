@@ -1,4 +1,4 @@
-﻿Imports DevExpress.XtraGrid
+Imports DevExpress.XtraGrid
 Imports DevExpress.XtraGrid.Views.Grid
 Imports DevExpress.XtraGrid.Registrator
 Imports DevExpress.XtraGrid.Views.Base
@@ -7,6 +7,7 @@ Imports System.ComponentModel
 Imports DevExpress.Utils.Serializing
 
 Namespace DXSample
+
     Public Class MyGridControl
         Inherits GridControl
 
@@ -26,13 +27,14 @@ Namespace DXSample
         Public Sub New()
             MyBase.New()
         End Sub
+
         Public Sub New(ByVal grid As GridControl)
             MyBase.New(grid)
         End Sub
 
         Friend Const MyGridViewName As String = "MyGridView"
 
-        Protected Overrides ReadOnly Property ViewName() As String
+        Protected Overrides ReadOnly Property ViewName As String
             Get
                 Return MyGridViewName
             End Get
@@ -50,7 +52,7 @@ Namespace DXSample
             MyBase.New()
         End Sub
 
-        Public Overrides ReadOnly Property ViewName() As String
+        Public Overrides ReadOnly Property ViewName As String
             Get
                 Return MyGridView.MyGridViewName
             End Get
@@ -80,48 +82,45 @@ Namespace DXSample
             MyBase.New()
         End Sub
 
+        Private oldVisibleIndexField As Integer = -1
 
-        Private oldVisibleIndex_Renamed As Integer = -1
-        <XtraSerializableProperty, XtraSerializablePropertyId(LayoutIdLayout)> _
-        Public Property OldVisibleIndex() As Integer
+        <XtraSerializableProperty, XtraSerializablePropertyId(LayoutIdLayout)>
+        Public Property OldVisibleIndex As Integer
             Get
-                Return oldVisibleIndex_Renamed
+                Return oldVisibleIndexField
             End Get
+
             Set(ByVal value As Integer)
-                If value = -1 Then
-                    Return
-                End If
-                oldVisibleIndex_Renamed = value
+                If value = -1 Then Return
+                oldVisibleIndexField = value
             End Set
         End Property
 
         Protected Overrides Sub Assign(ByVal column As GridColumn)
             MyBase.Assign(column)
             Dim source As MyGridColumn = TryCast(column, MyGridColumn)
-            If source Is Nothing Then
-                Return
-            End If
+            If source Is Nothing Then Return
             OldVisibleIndex = source.OldVisibleIndex
         End Sub
 
-        Public Overrides Property VisibleIndex() As Integer
+        Public Overrides Property VisibleIndex As Integer
             Get
                 Return MyBase.VisibleIndex
             End Get
+
             Set(ByVal value As Integer)
-                oldVisibleIndex_Renamed = value
+                oldVisibleIndexField = value
                 MyBase.VisibleIndex = value
             End Set
         End Property
 
-        Public Overrides Property Visible() As Boolean
+        Public Overrides Property Visible As Boolean
             Get
                 Return MyBase.Visible
             End Get
+
             Set(ByVal value As Boolean)
-                If Not MyBase.Visible AndAlso value AndAlso VisibleIndex = -1 Then
-                    VisibleIndex = OldVisibleIndex
-                End If
+                If Not MyBase.Visible AndAlso value AndAlso VisibleIndex = -1 Then VisibleIndex = OldVisibleIndex
                 MyBase.Visible = value
             End Set
         End Property

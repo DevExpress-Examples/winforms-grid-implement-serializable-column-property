@@ -1,5 +1,7 @@
-﻿Namespace Q242361
-    Partial Public Class Form1
+Namespace Q242361
+
+    Partial Class Form1
+
         ''' <summary>
         ''' Required designer variable.
         ''' </summary>
@@ -10,14 +12,14 @@
         ''' </summary>
         ''' <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-            If disposing AndAlso (components IsNot Nothing) Then
-                components.Dispose()
+            If disposing AndAlso (Me.components IsNot Nothing) Then
+                Me.components.Dispose()
             End If
+
             MyBase.Dispose(disposing)
         End Sub
 
-        #Region "Windows Form Designer generated code"
-
+#Region "Windows Form Designer generated code"
         ''' <summary>
         ''' Required method for Designer support - do not modify
         ''' the contents of this method with the code editor.
@@ -31,9 +33,9 @@
             Me.panelControl1 = New DevExpress.XtraEditors.PanelControl()
             Me.simpleButton2 = New DevExpress.XtraEditors.SimpleButton()
             Me.simpleButton1 = New DevExpress.XtraEditors.SimpleButton()
-            CType(Me.myGridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.myGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.panelControl1, System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.myGridControl1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.myGridView1), System.ComponentModel.ISupportInitialize).BeginInit()
+            CType((Me.panelControl1), System.ComponentModel.ISupportInitialize).BeginInit()
             Me.panelControl1.SuspendLayout()
             Me.SuspendLayout()
             ' 
@@ -45,11 +47,11 @@
             Me.myGridControl1.Name = "myGridControl1"
             Me.myGridControl1.Size = New System.Drawing.Size(401, 234)
             Me.myGridControl1.TabIndex = 0
-            Me.myGridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() { Me.myGridView1})
+            Me.myGridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.myGridView1})
             ' 
             ' myGridView1
             ' 
-            Me.myGridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() { Me.colCategoryID, Me.colCategoryName, Me.colDescription})
+            Me.myGridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colCategoryID, Me.colCategoryName, Me.colDescription})
             Me.myGridView1.GridControl = Me.myGridControl1
             Me.myGridView1.Name = "myGridView1"
             ' 
@@ -97,6 +99,7 @@
             Me.simpleButton2.Size = New System.Drawing.Size(87, 23)
             Me.simpleButton2.TabIndex = 1
             Me.simpleButton2.Text = "Restore Layout"
+            AddHandler Me.simpleButton2.Click, New System.EventHandler(AddressOf Me.simpleButton2_Click)
             ' 
             ' simpleButton1
             ' 
@@ -105,6 +108,7 @@
             Me.simpleButton1.Size = New System.Drawing.Size(75, 23)
             Me.simpleButton1.TabIndex = 0
             Me.simpleButton1.Text = "Save Layout"
+            AddHandler Me.simpleButton1.Click, New System.EventHandler(AddressOf Me.simpleButton1_Click)
             ' 
             ' Form1
             ' 
@@ -115,26 +119,29 @@
             Me.Controls.Add(Me.panelControl1)
             Me.Name = "Form1"
             Me.Text = "Form1"
-            CType(Me.myGridControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.myGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-            CType(Me.panelControl1, System.ComponentModel.ISupportInitialize).EndInit()
+            AddHandler Me.Load, New System.EventHandler(AddressOf Me.Form1_Load)
+            CType((Me.myGridControl1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.myGridView1), System.ComponentModel.ISupportInitialize).EndInit()
+            CType((Me.panelControl1), System.ComponentModel.ISupportInitialize).EndInit()
             Me.panelControl1.ResumeLayout(False)
             Me.ResumeLayout(False)
-
         End Sub
 
-        #End Region
-
+#End Region
         Private myGridControl1 As DXSample.MyGridControl
+
         Private myGridView1 As DXSample.MyGridView
+
         Private colCategoryID As DXSample.MyGridColumn
+
         Private colCategoryName As DXSample.MyGridColumn
+
         Private colDescription As DXSample.MyGridColumn
+
         Private panelControl1 As DevExpress.XtraEditors.PanelControl
-        Private WithEvents simpleButton2 As DevExpress.XtraEditors.SimpleButton
-        Private WithEvents simpleButton1 As DevExpress.XtraEditors.SimpleButton
 
+        Private simpleButton2 As DevExpress.XtraEditors.SimpleButton
 
+        Private simpleButton1 As DevExpress.XtraEditors.SimpleButton
     End Class
 End Namespace
-
